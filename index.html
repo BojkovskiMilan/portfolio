@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Milan Bojkovski Portfolio</title>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta name="keywords" content="portfolio, bojkovski , milan, html, web design, sass"/>
+        <meta name="author" content="Milan Bojkovski"/>
+        <meta name="description" content="Welcome to Milan Bojkovski's Portfolio!"/>
+        
+        <link rel="stylesheet" type="text/css" href="assets/css/style.css"/>
+        <link rel="stylesheet" type="text/css" href="assets/css/responsive.css"/>
+        <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+        <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css'>
+    </head>
+    <body>
+        <header>
+            <div id="logo">
+                <a href="index.html">
+                    <img src="assets/images/logo.jpeg" alt="Logo"/>
+                </a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html#home">Home</a></li>
+                    <li><a href="index.html#aboutme">About me</a></li>
+                    <li><a href="index.html#skills">Skills</a></li>
+                    <li><a href="index.html#projects">Projects</a></li>
+                    <li><a href="index.html#Contact">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+        <div class="homepage" id="home">
+            <div><h2>Hi! My name is</h2>
+            <h1>Milan Bojkovski</h1>
+            <h2><span>Junior Web Developer</span></h2>
+            <p><a href="index.html#aboutme">Check out my portfolio</a></p></div>
+        </div> 
+        <div id="aboutme" >
+            <h2><i class="far fa-user"></i>  About me</h2>
+            <div class="info slide-right">
+                <img src="assets/images/ja.JPG" alt="Picture of me"/>
+                <div>
+                    <p> My name is Milan Bojkovski. I'm an 18-year-old up-and-coming web developer, currently studying at ICT College in Belgrade. I've had a passion 
+                        for computers since I was young, and now I am finally beginning my programming journey. At the moment, front-end development interests me a lot.
+                        I am hard-working, passionate, and always ready to get the job done. 
+                        Other than sitting around and typing all day, I like going to gym, playing videogames and hanging out with friends. </p>
+                </div>
+            </div>
+        </div>
+        <div id="skills">
+            <h1><i class="far fa-gem"></i>  My Skills</h1></br>
+            <div class="skillz">
+                <div class="a-skill card-down">
+                    <img src="assets/images/html.png" alt="HTML logo"/>
+                    <p><b>HTML</b></p>
+                    <div class="progress">
+                        <h5>85%</h5>
+                        <div class="progress-85"></div>
+                    </div>
+                </div>
+                <div class="a-skill card-up">
+                    <img src="assets/images/csss.png" alt="CSS logo"/>
+                    <p><b>CSS</b></p>
+                    <div class="progress">
+                        <h5>85%</h5>
+                        <div class="progress-85"></div>
+                    </div>
+                </div>
+                <div class="a-skill card-down">
+                    <img src="assets/images/cplus.png" alt="C++ logo"/>
+                    <p><b>C++</b></p>
+                    <div class="progress">
+                        <h5>80%</h5>
+                        <div class="progress-80"></div>
+                        </div>
+                </div>
+                <div class="a-skill card-up">
+                    <img src="assets/images/sql.png" alt="SQL logo"/>
+                    <p><b>SQL</b></p>
+                    <div class="progress">
+                        <h5>65%</h5>
+                        <div class="progress-65"></div>
+                        </div>
+                </div>
+            </div>
+        </div>
+        <div id="projects">
+            <h2><i class="fas fa-hammer"></i>  My Projects</h2>
+            <div class="projectz">
+                <div class="a-project zoom-in">
+                    <a href="https://bojkovskimilan.github.io/pathofexile">
+                    <img src="assets/images/poesite.jpg" alt="My Path of Exile website"/>
+                    </a>
+                    <h3>Path of Exile Website</h3>
+                    <ul>
+                        <li>HTML</li>
+                        <li>CSS</li>
+                        <li>XML</li>
+                    </ul>
+                </div>
+                <div class="a-project zoom-in">
+                    <a href="https://www.youtube.com/watch?v=BIdt1QdogbA">
+                    <img src="assets/images/portfoliosite.jpg" alt="My Portfolio website"/>
+                    </a>
+                    <h3>My Portfolio</h3>
+                    <ul>
+                        <li>HTML</li>
+                        <li>CSS</li>
+                        <li>Responsive</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div id="contact">
+            <h2><i class="fas fa-phone-square"></i>  Contact</h2>
+            <div class="a-form slide-left">
+                <form method="GET" id="Contact" name="Contact Form">
+                    <label for="name">Full Name:</label><br/>
+                        <input type="text" id="namne" name="name" required="required"/><br/>
+                    <label for="email">Email:</label><br/>
+                        <input type="email" name="email" id="email" required="required"/><br/>
+                    <label for="telephone">Phone number:</label><br/>
+                        <input type="tel" id="telephone" name="telephone" /><br/>
+                    <label for="message">Message:</label><br/>
+                        <textarea name="message" form="Contact" required="required" maxlength="100"></textarea><br/>
+                    <div class="button">
+                        <input type="submit" name="submit" id="submit" value="Submit"/>
+                        <input type="reset" name="reset" id="reset" value="Reset"/>
+                    </div>
+                </form>
+                <div class="text"> 
+                    <ul>
+                        <li><i class="fas fa-at"></i><span> My Email:</span> milan.bojkovski.9.22@ict.edu.rs</li>
+                        <li><i class="fas fa-mobile-alt"></i><span> My Number:</span> 063 999 9999</li>
+                        <li><i class="fas fa-map-marker-alt"></i><span> My Address:</span> Zdravka Čelara 16, Beograd</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <footer>
+            <div class="footerwrapper">
+                <h4>Follow me here:</h4>
+                <div class="wrapper">
+                    <a href="https://www.facebook.com/milan.bojkovski" class="icon facebook">
+                    <div class="tooltip">Facebook</div>
+                        <span><i class="fab fa-facebook-f"></i></span>
+                    </a>
+                    <a href="https://www.instagram.com/bojkovskimilan/" class="icon instagram">
+                        <div class="tooltip">Instagram</div>
+                        <span><i class="fab fa-instagram"></i></span>
+                    </a>
+                    <a href="https://www.youtube.com/@skar5769" class="icon youtube">
+                        <div class="tooltip">Youtube</div>
+                        <span><i class="fab fa-youtube"></i></span>
+                    </a>
+                    <a href="sitemap.xml" class="icon sitemap">
+                        <div class="tooltip">Sitemap</div>
+                        <span><i class="fas fa-sitemap"></i></span>
+                    </a>
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>
