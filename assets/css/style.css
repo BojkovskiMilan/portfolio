@@ -617,7 +617,7 @@ footer h4{
 
 .wrapper .icon{
   position: relative;
-  background-color: #ffffff;
+  background-color: #fff;
   border-radius: 50%;
   margin: 10px;
   width: 50px;
@@ -636,8 +636,8 @@ footer h4{
   top: 0;
   line-height: 1.5;
   font-size: 14px;
-  background-color: #ffffff;
-  color: #ffffff;
+  background-color: #fff;
+  color: #fff;
   padding: 5px 8px;
   border-radius: 5px;
   box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
@@ -649,7 +649,7 @@ footer h4{
   content: "";
   height: 8px;
   width: 8px;
-  background-color: #ffffff;
+  background-color: #fff;
   bottom: -3px;
   left: 50%;
 }
@@ -661,7 +661,7 @@ footer h4{
 .wrapper .facebook:hover .tooltip,
 .wrapper .facebook:hover .tooltip::before {
   background-color: #3b5999;
-  color: #ffffff;
+  color: #fff;
   transition: .3s ease;
 }
 
@@ -675,7 +675,7 @@ footer h4{
 .wrapper .sitemap:hover,
 .wrapper .sitemap:hover .tooltip,
 .wrapper .sitemap:hover .tooltip::before {
-  background-color: #333333;
+  background-color: #333;
   color: #ffffff;
   transition: .3s ease;
 }
