@@ -28,6 +28,7 @@ a {
 	color: $purple;
 	text-decoration: none;
 }
+            //Header
 header {
 	height: 100px;
 	width: 100%;
@@ -72,6 +73,7 @@ nav {
 		}
 	}
 }
+            //Home
 #home {
 	background-image: url("../images/wallpaper.jpg");
 	background-size: cover;
@@ -128,6 +130,7 @@ nav {
 		}
 	}
 }
+            //About Me
 #aboutme {
 	background-color: $pink;
 	padding-bottom: 50px;
@@ -185,6 +188,7 @@ nav {
 	-webkit-animation-delay: 1s;
 	animation-delay: 1s;
 }
+            //Skills
 #skills {
 	display: -webkit-box;
 	display: -ms-flexbox;
@@ -323,6 +327,7 @@ nav {
 	height: 6px;
 	width: 50%;
 }
+            //Projects
 #projects {
 	background-color: $pink;
 	h2 {
@@ -413,6 +418,7 @@ nav {
 	-webkit-animation-fill-mode: forwards;
 	animation-fill-mode: forwards;
 }
+            //Contact
 #contact {
 	background-image: url("../images/wallpaper.jpg");
 	background-size: cover;
@@ -556,6 +562,7 @@ form {
 		line-height: 2;
 	}
 }
+            //Footer
 footer {
 	width: 100%;
 	text-align: center;
@@ -717,7 +724,7 @@ footer {
 		}
 	}
 }
-
+            //Scrollbar
 &::-webkit-scrollbar {
 	width: 10px;
 }
@@ -732,7 +739,7 @@ footer {
 		background: #6e6e6e;
 	}
 }
-
+            //Animations
 @-webkit-keyframes down {
 	from {
 		top: -200px;
@@ -853,9 +860,7 @@ footer {
 		opacity: 1;
 	}
 }
-
-
-
+            //Responsive
 @media only screen and (max-width: 1440px) {
 	#logo {
 		img {
