@@ -1,51 +1,80 @@
-$purple: #170420;
-$white: #fff;
-$pink: #ffd0da;
-$gray: #333;
-$green: #058f2e;
-$blue: #3b5999;
-$red: #e1306c;
-$orange: #de463b;
-$transparent: rgba(0,0,0,.19);
-$font: 'Titillium Web', sans-serif;
-
-
-
-
 @import "https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap";
 
+$white: #f0ebeb;
+$blue:#222880;
+$lightblue: #324f8c;
+$black: #0c0c0f;
+$green: #058f2e;
+$transparent: #ffffff00;
+$halftransparent: #f0ebeb86;
+$facebook: #3b5999;
+$instagram: #e1306c;
+$css: #de463b;
+$font: 'Titillium Web', sans-serif;
+
+@mixin flex-center{
+    display: flex; 
+    justify-content: center;
+}
+
+@mixin social-transition{
+    transition: .3s ease;
+}
+
+@mixin width{
+    width: 100%; 
+}
+
+@mixin all{
+    padding: 0px;
+    margin: 0px;
+    font-family: $font;
+}
+
+@mixin html{
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+}
+
+@mixin wallpaper{
+    background-image: url("../images/wallpaper.png");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
 
 * {
-	padding: 0px;
-	margin: 0px;
-	font-family: $font;
-}
+    @include all;
+  }
+  
 html {
-	overflow-y: scroll;
-	scroll-behavior: smooth;
-}
+    @include html;
+  }
+  
 a {
-	color: $purple;
-	text-decoration: none;
+    color: $white;
+    text-decoration: none;
+  }
+
+            /*Header*/
+
+header{
+    @include flex-center;
+    @include width;
+    justify-content: space-evenly;
+    height: 100px;
+    background-color: $blue;
+    position: fixed;
+    z-index: 2;
+    -webkit-animation: down 1s;
+    animation: down 1s;
 }
-            //Header
-header {
-	height: 100px;
-	width: 100%;
-	background-color: $pink;
-	position: fixed;
-	display: flex;
-	justify-content: center;
-	justify-content: space-evenly;
-	z-index: 2;
-	-webkit-animation: down 1s;
-	animation: down 1s;
-}
+
 #logo {
-	width: 30%;
+	@include flex-center;
+    width: 40%;
 	img {
-		width: 70px;
-		margin-top: 12px;
+		width: 100px;
 		transition: .3s ease;
 		&:hover {
 			transform: scale(1.05);
@@ -53,47 +82,64 @@ header {
 	}
 }
 nav {
+	width: 50%;
 	ul {
 		list-style: none;
 		padding-top: 25px;
+		display: flex;
+		justify-content: space-evenly;
 		li {
-			display: inline;
 			a {
 				text-decoration: none;
-				color: $purple;
+				color: $white;
 				font-size: 25px;
-				margin-right: 50px;
-				transition: .3s ease;
+				transition: .3s ease-in;
 				padding: 10px;
+				transition: all .5s;
+				position: relative;
+				&:after {
+					transition: all .5s;
+					position: absolute;
+					bottom: 0;
+					left: 0;
+					right: 0;
+					margin: auto;
+					width: 0%;
+					content: '.';
+					color: $transparent;
+					background: $white;
+					height: 1px;
+				}
+				&:before {
+					transition: all .5s;
+				}
 				&:hover {
-					color: $white;
-					border-width: 2px;
+					&:after {
+						@include width;
+					}
 				}
 			}
 		}
 	}
 }
-            //Home
+
+            /*Home*/
+
 #home {
-	background-image: url("../images/wallpaper.jpg");
-	background-size: cover;
-	background-position: center;
-	width: 100%;
+    @include flex-center;
+    @include wallpaper;
+	@include width;
 	height: 100vh;
-	background-attachment: fixed;
 	display: -webkit-box;
 	display: -ms-flexbox;
-	display: flex;
 	-webkit-box-pack: center;
 	-ms-flex-pack: center;
-	justify-content: center;
 	>div {
-		display: -webkit-box;
+        @include flex-center;
+        display: -webkit-box;
 		display: -ms-flexbox;
-		display: flex;
 		-webkit-box-pack: center;
 		-ms-flex-pack: center;
-		justify-content: center;
 		-webkit-box-align: center;
 		-ms-flex-align: center;
 		align-items: center;
@@ -119,67 +165,104 @@ nav {
 		font-size: 15px;
 		a {
 			padding: 15px 30px;
-			background-color: $purple;
+			background-color: $blue;
 			border-radius: 30px;
 			-webkit-transition: all 0.3s;
 			transition: all 0.3s;
-			color: $pink;
+			color: $white;
 			&:hover {
 				background-color: $white;
+				color: $blue;
 			}
 		}
 	}
 }
-            //About Me
+.line {
+	border: 0;
+	height: 1px;
+	background-image: linear-gradient(90deg, $blue 0%, $white 50%, $blue 100%);
+	width: 70%;
+	margin: 0 auto;
+	margin-top: 50px;
+	text-align: center;
+}
+.topl {
+	border: 0;
+	height: 1px;
+	background-image: linear-gradient(90deg, $blue 0%, $white 50%, $blue 100%);
+	width: 70%;
+	margin: 0 auto;
+}
+.botl {
+	border: 0;
+	height: 1px;
+	background-image: linear-gradient(90deg, $lightblue 0%, $white 50%, $lightblue 100%);
+	width: 70%;
+	margin: 0 auto;
+	margin-top: 50px;
+}
+
+            /*About Me*/
+
 #aboutme {
-	background-color: $pink;
-	padding-bottom: 50px;
+	@include width;
+    background: linear-gradient(90deg, $blue 45%, $lightblue 100%);
+	margin: 0 auto;
+	transition: .2s ease-in;
+	overflow: hidden;
 	h2 {
 		width: 80%;
 		margin: 0px auto;
 		text-align: center;
-		color: $purple;
+		color: $white;
 		padding-top: 45px;
-		margin-bottom: 25px;
 		font-size: 35px;
 	}
 }
 .info {
-	width: 65%;
-	margin: 0px auto;
-	display: -webkit-box;
-	display: -ms-flexbox;
-	display: flex;
-	-webkit-box-orient: vertical;
-	-webkit-box-direction: normal;
-	-ms-flex-direction: column;
-	flex-direction: column;
-	background-color: $transparent;
-	color: $white;
-	box-shadow: 0 0 10px #170420;
-	border-radius: 10px 7px 10px 7px;
-	box-sizing: border-box;
-	padding-bottom: 30px;
-	opacity: 0;
-	img {
-		width: 35%;
-		border-radius: 10px 7px 10px 7px;
-		margin: 25px auto;
-		transition: .3s ease;
-		&:hover {
-			transform: scale(1.05);
-			filter: drop-shadow(10px 10px 10px #170420);
-		}
-	}
+	@include flex-center;
+}
+#infotext {
+	width: 50%;
+	margin-top: 100px;
 	p {
-		width: 90%;
-		line-height: 30px;
-		font-size: 20px;
+		font-size: 25px;
 		margin: 0px auto;
 		text-align: center;
+		color: $white;
+	}
+}
+#infopic {
+	@include flex-center;
+	width: 30%;
+	padding-top: 50px;
+	padding-bottom: 50px;
+	img {
+		--s: 15px;
+		--b: 2px;
+		--w: 200px;
+		--c: $white;
+		width: 280px;
+		aspect-ratio: 1;
+		object-fit: cover;
+		padding: calc(2*var(--s));
+		--_g: var(--c) var(--b),$transparent 0 calc(100% - var(--b)),var(--c) 0;
+		background: linear-gradient( var(--_g)) 50%/100% var(--_i,100%) no-repeat, linear-gradient(90deg,var(--_g)) 50%/var(--_i,100%) 100% no-repeat;
+		outline: calc(var(--w)/1.5) solid $transparent;
+		outline-offset: calc(var(--w)/-1 - 2*var(--s));
+		transition: .4s;
+		filter: grayscale(100%);
+		cursor: pointer;
+		&:hover {
+			outline: var(--b) solid var(--c);
+			outline-offset: calc(var(--s)/-2);
+			--_i: calc(100% - 2*var(--s));
+			filter: grayscale(0%);
+		}
 	}
 }
 .slide-right {
+	opacity: 0;
 	position: relative;
 	-webkit-animation: right 1s;
 	animation: right 1s;
@@ -188,18 +271,16 @@ nav {
 	-webkit-animation-delay: 1s;
 	animation-delay: 1s;
 }
-            //Skills
+
+            /*Skills*/
+
 #skills {
-	display: -webkit-box;
+    @include wallpaper;
+    display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	background-image: url("../images/wallpaper.jpg");
-	background-size: cover;
-	background-position: center;
-	background-attachment: fixed;
-	padding-bottom: 50px;
 	h1 {
 		width: 80%;
 		margin: 0px auto;
@@ -223,35 +304,34 @@ nav {
 	-ms-flex-align: center;
 	align-items: center;
 	margin-top: 15px;
-	margin-bottom: 15px;
+	padding-bottom: 50px;
 	p {
 		font-size: 40px;
 		text-align: center;
-		color: $purple;
+		color: $white;
 	}
 }
 .a-skill {
-	background-color: $pink;
+	@include flex-center;
+    background-color: $blue;
 	color: $white;
 	width: 20%;
 	height: 400px;
 	display: -webkit-box;
 	display: -ms-flexbox;
-	display: flex;
 	-webkit-box-pack: center;
 	-ms-flex-pack: center;
-	justify-content: center;
 	-ms-flex-item-align: end;
 	align-self: flex-end;
 	-ms-flex-wrap: wrap;
 	flex-wrap: wrap;
-	-webkit-box-shadow: 0 0 10px #170420;
-	box-shadow: 0 0 10px #170420;
-	border-radius: 10px 7px 10px 7px;
+	-webkit-box-shadow: 0 0 10px $black;
+	box-shadow: 0 0 10px $black;
+	border-radius: 15px;
 	transition: .3s ease;
+	position: relative;
 	&:hover {
 		transform: scale(1.05);
-		filter: drop-shadow(10px 10px 10px #170420);
 	}
 	img {
 		width: 170px;
@@ -259,14 +339,17 @@ nav {
 		margin-top: 30px;
 	}
 	p {
-		width: 100%;
+		@include width;
 		height: -webkit-max-content;
 		height: -moz-max-content;
 		height: max-content;
 		margin: 10px;
+		margin-bottom: 50px;
+		font-size: 14px;
 	}
 }
 .card-up {
+	opacity: 0;
 	position: relative;
 	-webkit-animation: up 1s;
 	animation: up 1s;
@@ -276,6 +359,7 @@ nav {
 	animation-fill-mode: forwards;
 }
 .card-down {
+	opacity: 0;
 	position: relative;
 	-webkit-animation: down 1s;
 	animation: down 1s;
@@ -285,7 +369,7 @@ nav {
 	animation-fill-mode: forwards;
 }
 .progress {
-	background: rgba(255, 255, 255, 0.5);
+	background: $halftransparent;
 	border-radius: 100px;
 	-webkit-box-align: center;
 	-ms-flex-align: center;
@@ -299,39 +383,41 @@ nav {
 	height: 15px;
 	width: 80%;
 	h5 {
-		color: $purple;
+		color: $white;
 		margin: 1px;
 	}
 }
 .progress-85 {
-	-webkit-box-shadow: 0 10px 40px -10px #fff;
-	box-shadow: 0 10px 40px -10px #fff;
+	-webkit-box-shadow: 0 10px 40px -10px $white;
+	box-shadow: 0 10px 40px -10px $white;
 	border-radius: 100px;
 	background-color: $green;
 	height: 6px;
 	width: 70%;
 }
 .progress-80 {
-	-webkit-box-shadow: 0 10px 40px -10px #fff;
-	box-shadow: 0 10px 40px -10px #fff;
+	-webkit-box-shadow: 0 10px 40px -10px $white;
+	box-shadow: 0 10px 40px -10px $white;
 	border-radius: 100px;
 	background-color: $green;
 	height: 6px;
 	width: 65%;
 }
 .progress-65 {
-	-webkit-box-shadow: 0 10px 40px -10px #fff;
-	box-shadow: 0 10px 40px -10px #fff;
+	-webkit-box-shadow: 0 10px 40px -10px $white;
+	box-shadow: 0 10px 40px -10px $white;
 	border-radius: 100px;
 	background-color: $green;
 	height: 6px;
 	width: 50%;
 }
-            //Projects
+
+            /*Projects*/
+
 #projects {
-	background-color: $pink;
+	background: linear-gradient(90deg, $blue 45%, $lightblue 100%);
 	h2 {
-		color: $purple;
+		color: $white;
 		width: 80%;
 		margin: 0px auto;
 		text-align: center;
@@ -351,6 +437,7 @@ nav {
 	flex-direction: row;
 	width: 90%;
 	justify-content: space-evenly;
+	flex-wrap: wrap;
 }
 .a-project {
 	width: 40%;
@@ -371,8 +458,7 @@ nav {
 	-webkit-box-align: center;
 	-ms-flex-align: center;
 	align-items: center;
-	background-color: $pink;
-	color: $purple;
+	color: $white;
 	text-align: justify;
 	-ms-flex-wrap: wrap;
 	flex-wrap: wrap;
@@ -383,17 +469,18 @@ nav {
 		font-size: 25px;
 	}
 	img {
-		width: 100%;
+		@include width;
 		margin: 15px;
-		border-radius: 5px;
-		border: 3px solid #170420;
+		border-radius: 15px;
+		border: 3px solid $white;
 		filter: grayscale(100%);
+		transition: 0.3s ease;
 		&:hover {
 			transform: scale(1.1);
-			transition: 0.3s ease;
 			cursor: pointer;
-			box-shadow: 0 0 10px #170420;
+			box-shadow: 0 0 10px $black;
 			filter: grayscale(0%);
+			border: 1px solid $halftransparent;
 		}
 	}
 	ul {
@@ -418,13 +505,11 @@ nav {
 	-webkit-animation-fill-mode: forwards;
 	animation-fill-mode: forwards;
 }
-            //Contact
+
+            /*Contact*/
+
 #contact {
-	background-image: url("../images/wallpaper.jpg");
-	background-size: cover;
-	background-position: center;
-	padding-bottom: 40px;
-	background-attachment: fixed;
+    @include wallpaper;
 	h2 {
 		color: $white;
 		width: 80%;
@@ -445,23 +530,22 @@ nav {
 	animation-delay: 2.5s;
 }
 .a-form {
-	width: 50%;
+	@include flex-center;
+    width: 50%;
 	margin: 0px auto;
 	display: -webkit-box;
 	display: -ms-flexbox;
-	display: flex;
 	-webkit-box-pack: center;
 	-ms-flex-pack: center;
-	justify-content: center;
 	-webkit-box-align: center;
 	-ms-flex-align: center;
 	align-items: center;
-	background-color: $pink;
-	color: $purple;
+	background-color: $blue;
+	color: $white;
 	-ms-flex-wrap: wrap;
 	flex-wrap: wrap;
-	-webkit-box-shadow: 0 0 10px #170420;
-	box-shadow: 0 0 10px #170420;
+	-webkit-box-shadow: 0 0 10px $black;
+	box-shadow: 0 0 10px $black;
 	border-radius: 10px 7px 10px 7px;
 	opacity: 0;
 	padding: 20px;
@@ -470,44 +554,44 @@ form {
 	margin: 40px;
 	line-height: 2;
 	input[type="text"] {
-		border: 3px solid #170420;
-		border-radius: 3px;
+		border: 3px solid $black;
+		border-radius: 10px;
 		width: 270px;
 		height: 20px;
 		font-size: 15px;
 		outline: none;
 		padding: 2px;
 		&:focus {
-			border-color: $pink;
+			border-color: $black;
 		}
 	}
 	input[type="email"] {
-		border: 3px solid #170420;
-		border-radius: 3px;
+		border: 3px solid $black;
+		border-radius: 10px;
 		width: 270px;
 		height: 20px;
 		font-size: 15px;
 		outline: none;
 		padding: 2px;
 		&:focus {
-			border-color: $pink;
+			border-color: $black;
 		}
 	}
 	input[type="tel"] {
-		border: 3px solid #170420;
-		border-radius: 3px;
+		border: 3px solid $black;
+		border-radius: 10px;
 		width: 270px;
 		height: 20px;
 		font-size: 15px;
 		outline: none;
 		padding: 2px;
 		&:focus {
-			border-color: $pink;
+			border-color: $black;
 		}
 	}
 	textarea {
-		border: 3px solid #170420;
-		border-radius: 3px;
+		border: 3px solid $black;
+		border-radius: 10px;
 		width: 270px;
 		height: 20px;
 		font-size: 15px;
@@ -517,41 +601,37 @@ form {
 		height: 100px;
 		font-size: 15px;
 		&:focus {
-			border-color: $pink;
+			border-color: $black;
 		}
 	}
 	input[type="submit"] {
 		width: 65px;
 		height: 25px;
-		color: $purple;
-		background-color: $pink;
+		color: $blue;
+		background-color: $white;
 		border-radius: 5px;
 		font-weight: 900;
 		margin: 5px 10px;
+		transition: .2s ease-in;
 		&:hover {
-			color: $pink;
-			background-color: $purple;
-			-webkit-animation: zoomup 1s;
-			animation: zoomup 1s;
-			-webkit-animation-fill-mode: forwards;
-			animation-fill-mode: forwards;
+			color: $white;
+			background-color: $black;
+			transform: scale(1.1);
 		}
 	}
 	input[type="reset"] {
 		width: 65px;
 		height: 25px;
-		color: $purple;
-		background-color: $pink;
+		color: $blue;
+		background-color: $white;
 		border-radius: 5px;
 		font-weight: 900;
 		margin: 5px 10px;
+		transition: .2s ease-in;
 		&:hover {
-			color: $pink;
-			background-color: $purple;
-			-webkit-animation: zoomup 1s;
-			animation: zoomup 1s;
-			-webkit-animation-fill-mode: forwards;
-			animation-fill-mode: forwards;
+			color: $white;
+			background-color: $black;
+			transform: scale(1.1);
 		}
 	}
 }
@@ -562,11 +642,13 @@ form {
 		line-height: 2;
 	}
 }
-            //Footer
+
+            /*Footer*/
+            
 footer {
-	width: 100%;
+    @include wallpaper;
+    @include width;
 	text-align: center;
-	background-color: $pink;
 	a {
 		text-decoration: none;
 	}
@@ -575,17 +657,15 @@ footer {
 	}
 }
 .footerwrapper {
-	display: flex;
+	@include flex-center;
 	align-items: center;
 	justify-content: space-between;
 	justify-content: space-evenly;
-	justify-content: center;
 	width: 70%;
 	margin: 0px auto;
 	h4 {
-		margin-bottom: 10px;
 		font-size: 20px;
-		color: $purple;
+		color: $white;
 	}
 }
 .wrapper {
@@ -602,7 +682,7 @@ footer {
 		align-items: center;
 		box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
 		cursor: pointer;
-		color: $gray;
+		color: $black;
 		text-decoration: none;
 		&:hover {
 			span {
@@ -637,106 +717,109 @@ footer {
 	}
 	.facebook {
 		&:hover {
-			background-color: $blue;
+			background-color: $facebook;
 			color: $white;
-			transition: .3s ease;
+			@include social-transition;
 			.tooltip {
-				background-color: $blue;
+				background-color: $facebook;
 				color: $white;
-				transition: .3s ease;
+				@include social-transition;
 				&::before {
-					background-color: $blue;
+					background-color: $facebook;
 					color: $white;
-					transition: .3s ease;
+					@include social-transition;
 				}
 			}
 		}
 	}
 	.instagram {
 		&:hover {
-			background-color: $red;
-			color: $color_5;
-			transition: .3s ease;
+			background-color: $instagram;
+			color: $white;
+			@include social-transition;
 			.tooltip {
-				background-color: $red;
-				color: $color_5;
-				transition: .3s ease;
+				background-color: $instagram;
+				color: $white;
+				@include social-transition;
 				&::before {
-					background-color: $red;
-					color: $color_5;
-					transition: .3s ease;
+					background-color: $instagram;
+					color: $white;
+					@include social-transition;
 				}
 			}
 		}
 	}
 	.sitemap {
 		&:hover {
-			background-color: $gray;
-			color: $color_5;
-			transition: .3s ease;
+			background-color: $green;
+			color: $white;
+			@include social-transition;
 			.tooltip {
-				background-color: $gray;
-				color: $color_5;
-				transition: .3s ease;
+				background-color: $green;
+				color: $white;
+				@include social-transition;
 				&::before {
-					background-color: $gray;
-					color: $color_5;
-					transition: .3s ease;
+					background-color: $green;
+					color: $white;
+					@include social-transition;
 				}
 			}
 		}
 	}
 	.css {
 		&:hover {
-			background-color: $orange;
-			color: $color_5;
-			transition: .3s ease;
+			background-color: $css;
+			color: $white;
+			@include social-transition;
 			.tooltip {
-				background-color: $orange;
-				color: $color_5;
-				transition: .3s ease;
+				background-color: $css;
+				color: $white;
+				@include social-transition;
 				&::before {
-					background-color: $orange;
-					color: $color_5;
-					transition: .3s ease;
+					background-color: $css;
+					color: $white;
+					@include social-transition;
 				}
 			}
 		}
 	}
 	.scss {
 		&:hover {
-			background-color: $purple;
-			color: $color_5;
-			transition: .3s ease;
+			background-color: $black;
+			color: $white;
+			@include social-transition;
 			.tooltip {
-				background-color: $purple;
-				color: $color_5;
-				transition: .3s ease;
+				background-color: $black;
+				color: $white;
+				@include social-transition;
 				&::before {
-					background-color: $purple;
-					color: $color_5;
-					transition: .3s ease;
+					background-color: $black;
+					color: $white;
+					@include social-transition;
 				}
 			}
 		}
 	}
 }
-            //Scrollbar
+
+            /*Scrollbar*/
+
 &::-webkit-scrollbar {
-	width: 10px;
+	width: 5px;
 }
 &::-webkit-scrollbar-track {
-	-webkit-box-shadow: inset 0px 0px 4px #6e6e6e;
-	box-shadow: inset 0px 0px 4px #6e6e6e;
-	background-color: $purple;
+	background-color: $black;
 }
 &::-webkit-scrollbar-thumb {
-	background: #ffd0da;
+	background: $lightblue;
 	&:hover {
-		background: #6e6e6e;
+		background: $blue;
 	}
 }
-            //Animations
+
+           /*Animations*/
+
+
 @-webkit-keyframes down {
 	from {
 		top: -200px;
@@ -857,15 +940,10 @@ footer {
 		opacity: 1;
 	}
 }
-            //Responsive
+
+           /*Responsive*/
+
 @media only screen and (max-width: 1440px) {
-	#logo {
-		img {
-			width: 70px;
-			height: 70px;
-			margin-left: 50px;
-		}
-	}
 	nav {
 		ul {
 			li {
@@ -878,11 +956,10 @@ footer {
 	#home {
 		height: 800px;
 	}
-	.info {
-		div {
-			p {
-				font-size: 20px;
-			}
+	#infotext {
+		margin-left: 100px;
+		p {
+			font-size: 20px;
 		}
 	}
 	.a-skill {
@@ -890,6 +967,9 @@ footer {
 			width: 140px;
 			height: 140px;
 			margin-top: 70px;
+		}
+		p {
+			font-size: 11px;
 		}
 	}
 }
@@ -903,25 +983,11 @@ footer {
 			}
 		}
 	}
-	#logo {
-		img {
-			width: 60px;
-			height: 60px;
-			margin-top: 20px;
-		}
-	}
 	.homepage {
 		height: 70vh;
 	}
-	.info {
-		div {
-			p {
-				font-size: 16px;
-			}
-		}
-		img {
-			width: 50%;
-		}
+	#infotext {
+		margin-top: 50px;
 	}
 	#skills {
 		padding-bottom: 0px;
@@ -955,19 +1021,19 @@ footer {
 			margin: 5px auto;
 		}
 		nav {
-			width: 100%;
+			@include flex-center;
+            @include width;
 			display: -webkit-box;
 			display: -ms-flexbox;
-			display: flex;
 			-webkit-box-pack: center;
 			-ms-flex-pack: center;
-			justify-content: center;
 		}
 	}
 	#logo {
 		img {
-			width: 50px;
-			height: 50px;
+			width: 70px;
+			height: 70px;
+			margin-top: 10px;
 		}
 	}
 	nav {
@@ -982,26 +1048,22 @@ footer {
 		}
 	}
 	.info {
-		div {
-			p {
-				font-size: 16px;
-				margin: 10px auto;
-			}
-			ul {
-				display: flex;
-				flex-direction: column;
-				flex-wrap: wrap;
-				line-height: 2;
-				align-items: center;
-				margin-bottom: 15px;
-			}
-		}
+		flex-direction: column;
+	}
+	#infotext {
+		width: 40%;
+		width: 80%;
+		margin: 0 auto;
+	}
+	#infopic {
+		@include width;
+		margin: 0 auto;
 		img {
-			width: 55%;
+			width: 300px;
 		}
 	}
 }
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 740px) {
 	#home {
 		h1 {
 			font-size: 65px;
@@ -1022,34 +1084,35 @@ footer {
 			width: 150px;
 			height: 150px;
 		}
-		p {
-			font-size: 50px;
-		}
 	}
 	.a-form {
 		width: 65%;
+	}
+	.footerwrapper {
+		width: 80%;
 	}
 }
 @media only screen and (max-width: 600px) {
 	header {
 		position: sticky;
+		flex-direction: column;
+		height: 150px;
 	}
 	#logo {
 		img {
-			width: 40px;
-			height: 40px;
+			width: 60px;
+			height: 60px;
+			margin: 0 auto;
 		}
 	}
 	nav {
 		ul {
+			padding-top: 0px;
 			li {
 				a {
 					font-size: 12px;
 				}
 				margin-left: 10px;
-			}
-			img {
-				width: 55px;
 			}
 		}
 	}
@@ -1068,11 +1131,9 @@ footer {
 			font-size: 10px;
 		}
 	}
-	.info {
-		div {
-			p {
-				font-size: 15px;
-			}
+	#infopic {
+		img {
+			width: 200px;
 		}
 	}
 	.a-skill {
@@ -1089,11 +1150,13 @@ footer {
 	}
 }
 @media only screen and (max-width: 425px) {
+	header {
+		height: 130px;
+	}
 	#logo {
 		img {
-			width: 35px;
-			height: 35px;
-			margin-left: 30px;
+			width: 50px;
+			height: 50px;
 		}
 	}
 	nav {
@@ -1117,13 +1180,9 @@ footer {
 			}
 		}
 	}
-	.info {
-		text-align: none;
-		width: 85%;
-	}
 	.skillz {
-		display: flex;
-		width: 100%;
+        @include width;
+        display: flex;
 	}
 	.a-skill {
 		width: 80%;
@@ -1132,7 +1191,7 @@ footer {
 		height: auto;
 		padding: 20px;
 		p {
-			width: 100%;
+			@include width;
 			margin: 20px 20px 45px 20px;
 		}
 		img {
