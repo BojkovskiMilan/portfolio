@@ -973,6 +973,7 @@ footer {
 		}
 	}
 }
+
 @media only screen and (max-width: 1024px) {
 	nav {
 		ul {
@@ -1015,6 +1016,7 @@ footer {
 		width: 60%;
 	}
 }
+
 @media only screen and (max-width: 890px) {
 	header {
 		#logo {
@@ -1063,6 +1065,18 @@ footer {
 		}
 	}
 }
+
+@media only screen and (max-width : 768px) {
+	.card-up, .card-down{
+	  -webkit-animation: none !important;
+		  -moz-animation: none !important;
+		  -o-animation: none !important;
+		  -ms-animation: none !important;
+		  animation: none !important;
+	  opacity:1;
+	}
+  }
+
 @media only screen and (max-width: 740px) {
 	#home {
 		h1 {
@@ -1198,14 +1212,6 @@ footer {
 			width: 130px;
 			height: 130px;
 		}
-	}
-	.card-down {
-		animation: opac 2s;
-		animation-fill-mode: forwards;
-	}
-	.card-up {
-		animation: opac 2s;
-		animation-fill-mode: forwards;
 	}
 	#skills {
 		h1 {

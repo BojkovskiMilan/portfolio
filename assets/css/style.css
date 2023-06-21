@@ -1054,7 +1054,19 @@ footer .contact{
 
 }
 
-@media only screen and (max-width: 740px){
+@media only screen and (max-width : 768px) {
+  .card-up, .card-down{
+    -webkit-animation: none !important;
+		-moz-animation: none !important;
+		-o-animation: none !important;
+		-ms-animation: none !important;
+		animation: none !important;
+    opacity:1;
+  }
+}
+
+  @media only screen and (max-width: 740px){
+  
   #home h1{
       font-size: 65px;
   }
@@ -1062,11 +1074,6 @@ footer .contact{
   nav ul li a{
       font-size: 13px;
   }
-
-  
-
-  
-
 
   .a-skill{
       width:40%;
@@ -1207,11 +1214,6 @@ footer .contact{
   .a-skill img{
       width:130px;
       height:130px;
-  }
-
-  .card-down, .card-up{
-      animation: opac 2s;
-      animation-fill-mode: forwards;
   }
 
 
