@@ -1,5 +1,7 @@
 @import "https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap";
 
+            /*Colors & Font*/
+
 $white: #f0ebeb;
 $blue:#222880;
 $lightblue: #324f8c;
@@ -11,6 +13,8 @@ $facebook: #3b5999;
 $instagram: #e1306c;
 $css: #de463b;
 $font: 'Titillium Web', sans-serif;
+
+            /*Mixin*/
 
 @mixin flex-center{
     display: flex; 
@@ -31,11 +35,6 @@ $font: 'Titillium Web', sans-serif;
     font-family: $font;
 }
 
-@mixin html{
-    overflow-y: scroll;
-    scroll-behavior: smooth;
-}
-
 @mixin wallpaper{
     background-image: url("../images/wallpaper.png");
     background-size: cover;
@@ -43,12 +42,39 @@ $font: 'Titillium Web', sans-serif;
     background-attachment: fixed;
 }
 
+@mixin info-animation{
+	--s: 15px;
+	--b: 2px;
+	--w: 200px;
+	--c: $white;
+	width: 280px;
+	aspect-ratio: 1;
+	object-fit: cover;
+	padding: calc(2*var(--s));
+	--_g: var(--c) var(--b),$transparent 0 calc(100% - var(--b)),var(--c) 0;
+	background: linear-gradient( var(--_g)) 50%/100% var(--_i,100%) no-repeat, linear-gradient(90deg,var(--_g)) 50%/var(--_i,100%) 100% no-repeat;
+	outline: calc(var(--w)/1.5) solid $transparent;
+	outline-offset: calc(var(--w)/-1 - 2*var(--s));
+	transition: .4s;
+	filter: grayscale(100%);
+	cursor: pointer;
+}
+
+@mixin info-animation-hover{
+	outline: var(--b) solid var(--c);
+	outline-offset: calc(var(--s)/-2);
+	--_i: calc(100% - 2*var(--s));
+	filter: grayscale(0%);
+}
+
+
 * {
     @include all;
   }
   
 html {
-    @include html;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
   }
   
 a {
@@ -238,26 +264,9 @@ nav {
 	padding-top: 50px;
 	padding-bottom: 50px;
 	img {
-		--s: 15px;
-		--b: 2px;
-		--w: 200px;
-		--c: $white;
-		width: 280px;
-		aspect-ratio: 1;
-		object-fit: cover;
-		padding: calc(2*var(--s));
-		--_g: var(--c) var(--b),$transparent 0 calc(100% - var(--b)),var(--c) 0;
-		background: linear-gradient( var(--_g)) 50%/100% var(--_i,100%) no-repeat, linear-gradient(90deg,var(--_g)) 50%/var(--_i,100%) 100% no-repeat;
-		outline: calc(var(--w)/1.5) solid $transparent;
-		outline-offset: calc(var(--w)/-1 - 2*var(--s));
-		transition: .4s;
-		filter: grayscale(100%);
-		cursor: pointer;
+		@include info-animation;
 		&:hover {
-			outline: var(--b) solid var(--c);
-			outline-offset: calc(var(--s)/-2);
-			--_i: calc(100% - 2*var(--s));
-			filter: grayscale(0%);
+			@include info-animation-hover
 		}
 	}
 }
