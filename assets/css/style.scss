@@ -977,6 +977,7 @@ footer {
 @media only screen and (max-width: 1024px) {
 	nav {
 		ul {
+			margin-top: 10px;
 			li {
 				a {
 					font-size: 18px;
@@ -1000,7 +1001,7 @@ footer {
 	}
 	.a-skill {
 		width: 35%;
-		margin-bottom: 35px;
+		margin-bottom: 35px ;
 	}
 	.projectz {
 		flex-direction: column;
