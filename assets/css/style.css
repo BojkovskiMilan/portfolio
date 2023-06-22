@@ -27,7 +27,6 @@ header {
   justify-content: center;
   justify-content: space-evenly;
 	z-index: 2;
-  -webkit-animation: down 1s;
   animation: down 1s;
 }
 
@@ -102,27 +101,14 @@ nav ul li a:hover:after {
   width: 100%;
   height: 100vh;
   background-attachment: fixed;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
   justify-content: center;
 }
 
 #home > div{
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
   justify-content: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: row;
   flex-direction: column;
   animation: zoom 1s;
 }
@@ -151,7 +137,6 @@ nav ul li a:hover:after {
   padding: 15px 30px;
   background-color: #222880;
   border-radius: 30px;
-  -webkit-transition: all 0.3s;
   transition: all 0.3s;
   color: #f0ebeb;
 }
@@ -268,11 +253,8 @@ nav ul li a:hover:after {
 .slide-right {
   opacity: 0;
   position: relative;
-  -webkit-animation: right 1s;
   animation: right 1s;
-  -webkit-animation-fill-mode: forwards;
   animation-fill-mode: forwards;
-  -webkit-animation-delay: 1s;
   animation-delay: 1s;
 }
 
@@ -281,8 +263,6 @@ nav ul li a:hover:after {
 
 
 #skills {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -305,15 +285,9 @@ nav ul li a:hover:after {
 
 .skillz {
   width: 80%;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   flex-direction: row;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
   justify-content: space-between;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
   margin-top: 15px;
   padding-bottom: 50px;
@@ -330,17 +304,10 @@ nav ul li a:hover:after {
   color: #f0ebeb;
   width: 20%;
   height: 400px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
   justify-content: center;
-  -ms-flex-item-align: end;
   align-self: flex-end;
-  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  -webkit-box-shadow: 0 0 10px #0c0c0f;
   box-shadow: 0 0 10px #0c0c0f;
   border-radius: 15px;
   transition: .3s ease;
@@ -359,8 +326,6 @@ nav ul li a:hover:after {
 
 .a-skill p {
   width: 100%;
-  height: -webkit-max-content;
-  height: -moz-max-content;
   height: max-content;
   margin: 10px;
   margin-bottom: 50px;
@@ -370,36 +335,26 @@ nav ul li a:hover:after {
 .card-up {
   opacity: 0;
   position: relative;
-  -webkit-animation: up 1s;
   animation: up 1s;
-  -webkit-animation-delay: 1s;
   animation-delay: 1.5s;
-  -webkit-animation-fill-mode: forwards;
   animation-fill-mode: forwards;
 }
 
 .card-down {
   opacity: 0;
   position: relative;
-  -webkit-animation: down 1s;
   animation: down 1s;
-  -webkit-animation-delay: 1s;
   animation-delay: 1.5s;
-  -webkit-animation-fill-mode: forwards;
   animation-fill-mode: forwards;
 }
 
 .progress {
   background: #f0ebeb86;
   border-radius: 100px;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
   position: absolute;
   bottom: 4%;
   padding: 0px 5px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   height: 15px;
   width: 80%;
@@ -412,7 +367,6 @@ nav ul li a:hover:after {
 
 
 .progress-85 {
-  -webkit-box-shadow: 0 10px 40px -10px #f0ebeb;
   box-shadow: 0 10px 40px -10px #f0ebeb;
   border-radius: 100px;
   background-color: #058f2e;
@@ -421,7 +375,6 @@ nav ul li a:hover:after {
 }
 
 .progress-80 {
-  -webkit-box-shadow: 0 10px 40px -10px #f0ebeb;
   box-shadow: 0 10px 40px -10px #f0ebeb;
   border-radius: 100px;
   background-color: #058f2e;
@@ -430,7 +383,6 @@ nav ul li a:hover:after {
 }
 
 .progress-65 {
-  -webkit-box-shadow: 0 10px 40px -10px #f0ebeb;
   box-shadow: 0 10px 40px -10px #f0ebeb;
   border-radius: 100px;
   background-color: #058f2e;
@@ -459,12 +411,7 @@ nav ul li a:hover:after {
 
 .projectz {
   margin: 0px auto;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
   flex-direction: row;
   width: 90%;
   justify-content: space-evenly;
@@ -477,24 +424,13 @@ nav ul li a:hover:after {
   margin-bottom: 50px;
   margin-left: auto;
   margin-right: auto;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-box-pack: baseline;
-  -ms-flex-pack: baseline;
   justify-content: baseline;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
   color: #f0ebeb;
   text-align: justify;
-  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  -webkit-transform: scale(0);
   transform: scale(0);
   padding-top: 15px;
 }
@@ -521,12 +457,7 @@ nav ul li a:hover:after {
 }
 
 .a-project ul {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: row;
   flex-direction: row;
 }
 
@@ -536,11 +467,8 @@ nav ul li a:hover:after {
 }
 
 .zoom-in {
-  -webkit-animation: zoom 1s;
   animation: zoom 1s;
-  -webkit-animation-delay: 1s;
   animation-delay: 2s;
-  -webkit-animation-fill-mode: forwards;
   animation-fill-mode: forwards;
 }
 
@@ -567,31 +495,20 @@ nav ul li a:hover:after {
 
 .slide-left {
   position: relative;
-  -webkit-animation: left 1s;
   animation: left 1s;
-  -webkit-animation-fill-mode: forwards;
   animation-fill-mode: forwards;
-  -webkit-animation-delay: 2.5s;
   animation-delay: 2.5s;
 }
 
 .a-form {
   width: 50%;
   margin: 0px auto;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
   justify-content: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
   background-color: #222880;
   color: #f0ebeb;
-  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  -webkit-box-shadow: 0 0 10px #0c0c0f;
   box-shadow: 0 0 10px #0c0c0f;
   border-radius: 10px 7px 10px 7px;
   opacity: 0;
@@ -766,17 +683,6 @@ footer .contact{
             /*Animations*/
 
 
-@-webkit-keyframes down {
-  from {
-    top: -200px;
-    opacity: 0;
-  }
-  to {
-    top: 0;
-    opacity: 1;
-  }
-}
-
 @keyframes down {
   from {
     top: -200px;
@@ -784,17 +690,6 @@ footer .contact{
   }
   to {
     top: 0;
-    opacity: 1;
-  }
-}
-
-@-webkit-keyframes up {
-  from {
-    bottom: -200px;
-    opacity: 0;
-  }
-  to {
-    bottom: 0;
     opacity: 1;
   }
 }
@@ -810,16 +705,6 @@ footer .contact{
   }
 }
 
-@-webkit-keyframes zoom {
-  from {
-    -webkit-transform: scale(0);
-            transform: scale(0);
-  }
-  to {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-  }
-}
 
 @keyframes zoom {
   from {
@@ -832,16 +717,6 @@ footer .contact{
   }
 }
 
-@-webkit-keyframes zoomup {
-  from {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-  }
-  to {
-    -webkit-transform: scale(1.1);
-            transform: scale(1.1);
-  }
-}
 
 @keyframes zoomup {
   from {
@@ -854,16 +729,6 @@ footer .contact{
   }
 }
 
-@-webkit-keyframes right {
-  from {
-    right: -300px;
-    opacity: 0;
-  }
-  to {
-    right: 0;
-    opacity: 1;
-  }
-}
 
 @keyframes right {
   from {
@@ -876,16 +741,6 @@ footer .contact{
   }
 }
 
-@-webkit-keyframes left {
-  from {
-    left: -300px;
-    opacity: 0;
-  }
-  to {
-    left: 0;
-    opacity: 1;
-  }
-}
 
 @keyframes left {
   from {
@@ -1019,11 +874,7 @@ footer .contact{
 
   header nav {
       width: 100%;
-      display: -webkit-box;
-      display: -ms-flexbox;
       display: flex;
-      -webkit-box-pack: center;
-      -ms-flex-pack: center;
       justify-content: center;
   }
 
@@ -1061,10 +912,6 @@ footer .contact{
 
 @media only screen and (max-width : 768px) {
   .card-up, .card-down{
-    -webkit-animation: none !important;
-		-moz-animation: none !important;
-		-o-animation: none !important;
-		-ms-animation: none !important;
 		animation: none !important;
     opacity:1;
   }
