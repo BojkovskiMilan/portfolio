@@ -21,9 +21,16 @@ $font: 'Titillium Web', sans-serif;
     justify-content: center;
 }
 
-@mixin social-transition{
-    transition: .3s ease;
-}
+@mixin title {
+	width: 80%;
+	margin: 0px auto;
+	text-align: center;
+	color: #f0ebeb;
+	padding-top: 35px;
+	margin-bottom: 25px;
+	font-size: 35px;
+  }
+  
 
 @mixin width{
     width: 100%; 
@@ -40,6 +47,10 @@ $font: 'Titillium Web', sans-serif;
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
+}
+
+@mixin social-transition{
+    transition: .3s ease;
 }
 
 @mixin info-animation{
@@ -237,12 +248,7 @@ nav {
 	transition: .2s ease-in;
 	overflow: hidden;
 	h2 {
-		width: 80%;
-		margin: 0px auto;
-		text-align: center;
-		color: $white;
-		padding-top: 45px;
-		font-size: 35px;
+		@include title;
 	}
 }
 .info {
@@ -426,13 +432,7 @@ nav {
 #projects {
 	background: linear-gradient(90deg, $blue 45%, $lightblue 100%);
 	h2 {
-		color: $white;
-		width: 80%;
-		margin: 0px auto;
-		text-align: center;
-		padding-top: 35px;
-		margin-bottom: 25px;
-		font-size: 35px;
+		@include title;
 	}
 }
 .projectz {
@@ -520,13 +520,7 @@ nav {
 #contact {
     @include wallpaper;
 	h2 {
-		color: $white;
-		width: 80%;
-		margin: 0px auto;
-		text-align: center;
-		padding-top: 35px;
-		margin-bottom: 25px;
-		font-size: 35px;
+		@include title;
 	}
 }
 .slide-left {
